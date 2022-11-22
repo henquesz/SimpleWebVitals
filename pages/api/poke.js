@@ -2,11 +2,11 @@
 
 export default async function handler(req, res) {
   // res.status(200).json({ name: 'John Doe' })
-  const pokeApi = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000");
+  const pokeApi = await fetch("https://pokeapi.co/api/v2/pokemon?limit=18");
   const pokeResponseJson = await pokeApi.json();
   res.setHeader('Cache-Control', 's-maxage-10, stale-while-revalidate');
     res.json({
-        pokemon: pokeResponseJson
+        pokeResponseJson
     })
     console.log(pokeResponseJson);
 }
