@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const pokeResponseJson = await pokeApi.json();
   res.setHeader('Cache-Control', 's-maxage-10, stale-while-revalidate');
     res.json({
-        pokeResponseJson
+        pokemon: pokeResponseJson
     })
     console.log(pokeResponseJson);
 }
