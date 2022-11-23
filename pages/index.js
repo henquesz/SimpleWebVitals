@@ -13,13 +13,16 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Bem vindo a <a href="https://https://poke-api-green-nu.vercel.app/api/poke">PokeApi!</a>
+          Bem vindo a <a href="https://pokeapivini.herokuapp.com/api/poke">PokeApi!</a>
         </h1>
 
         <p className={styles.description}>
           Acesse as informações atráves da rota{' '}
-          <code className={styles.code}>/api/poke</code>
+          <code className={styles.code}>/api/poke</code><br></br><br></br>
+          ou minhas informações em{' '}
+          <code className={styles.code}>/api/dev</code>
         </p>
+        
 
         <div className={styles.grid}>
           <a href="https://github.com/henquesz" className={styles.card}>
