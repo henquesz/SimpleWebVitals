@@ -2,10 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home(req, res) {
-  res.setHeader('Cache-Control', 's-maxage-10, stale-while-revalidate');
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
