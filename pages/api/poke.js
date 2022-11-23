@@ -10,11 +10,8 @@ export default async function handler(req, res) {
 
   const pokeApi = await fetch("https://pokeapi.co/api/v2/pokemon?limit=18");
   const pokeResponseJson = await pokeApi.json();
-      res.json({
-          pokemon: pokeResponseJson
-      })
 
-      if(req.method === 'OPTIONS') {
+      if(req.method === 'GET') {
         return res.status(200).json(({
           pokemon: pokeResponseJson
         }))
