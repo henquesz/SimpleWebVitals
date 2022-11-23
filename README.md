@@ -6,7 +6,7 @@ Neste projeto, utilizei o NextJS para a criação de uma conexão com a pokeapi 
 
 ## Utilização
 
-incluir aqui
+Para usar as informações da api, acesse https://pokeapivini.herokuapp.com e siga as instruções.
 
 
 ## Funcionalidades
@@ -16,7 +16,7 @@ incluir aqui
 
 ## Observações finais importantes
 
-- incluir aquia informação sobre a rota da api
+- use a rota /api/poke
 
 
 ## Referência
