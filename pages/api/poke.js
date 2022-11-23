@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 
-  const pokeApi = await fetch("https://pokeapi.co/api/v2/pokemon?limit=18", {mode: 'cors'});
+  const pokeApi = await fetch("https://pokeapi.co/api/v2/pokemon?limit=18", {mode: 'cors', credentials: 'include'});
   const pokeResponseJson = await pokeApi.json();
 
       if(req.method === 'GET') {
