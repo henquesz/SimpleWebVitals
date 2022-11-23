@@ -22,18 +22,18 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <a href="https://github.com/henquesz" className={styles.card}>
             <h2>GitHub &rarr;</h2>
             <p>Acesse o GitHub do dev responsável.</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
+          <a href="https://www.linkedin.com/in/vinicius-henques-5a843a1b9/" className={styles.card}>
             <h2>LinkedIn &rarr;</h2>
             <p>Veja o perfil profissional do nosso dev.</p>
           </a>
 
           <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
+            href="https://viniciushenquesportfolio.vercel.app"
             className={styles.card}
           >
             <h2>Portfólio &rarr;</h2>
@@ -41,7 +41,7 @@ export default function Home() {
           </a>
 
           <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://github.com/henquesz/PokeApi"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.card}
