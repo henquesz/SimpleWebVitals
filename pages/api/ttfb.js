@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 // poke api informations with allow cors
 
-export default async function handler(req, res) {
+export default async function ttfb(req, res) {
   // res.status(200).json({ name: 'John Doe' })
 
     res.setHeader('Access-Control-Allow-Origin', '*');
