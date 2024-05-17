@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 // poke api informations with allow cors
 
-export default async function ttfb(req, res) {
+export default async function ttfb(req, res, url) {
   // res.status(200).json({ name: 'John Doe' })
 
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -12,7 +12,7 @@ export default async function ttfb(req, res) {
     var ttfb;
     var jsonRetorno;
 
-      const url = 'https://ibrapsi.com.br/graduacao-em-psicanalise/';
+      const url = url;
       const fetchUrl = async () => {
         if (performance && performance.clearResourceTimings) {
           performance.clearResourceTimings();

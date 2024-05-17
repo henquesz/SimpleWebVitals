@@ -1,14 +1,16 @@
 const puppeteer = require('puppeteer');
 
 
-export default async function inp(req, res) {
+export default async function inp(req, res, url) {
     // res.status(200).json({ name: 'John Doe' })
   
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
       res.setHeader('Access-Control-Allow-Credentials', true);
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
-      const url = 'https://nextjs.org/docs/getting-started/installation';
+
+      
+      let url = url;
 
       // Launch a headless browser
       const browser = await puppeteer.launch({ headless: true });
@@ -57,7 +59,7 @@ export default async function inp(req, res) {
     
       console.log('Interaction to Next Paint (INP):', inp ? `${inp} ms` : 'No INP measured');
 
-      res.status(200).json({'Interaction to Next Paint (INP):': inp + 'ms'});
+      res.status(200).json({'Interaction to Next Paint (INP):': inp ? `${inp} ms` : 'No INP measured'});
     
       // Close the browser
       await browser.close();

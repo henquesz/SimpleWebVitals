@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 
 
-export default async function cls(req, res) {
+export default async function cls(req, res, url) {
     // res.status(200).json({ name: 'John Doe' })
   
       res.setHeader('Access-Control-Allow-Origin', '*');
@@ -10,7 +10,7 @@ export default async function cls(req, res) {
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
   
 
-const url = 'https://nextjs.org/docs/getting-started/installation';
+      let url = url;
 
 // Launch a headless browser
 const browser = await puppeteer.launch({ headless: true });

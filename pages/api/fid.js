@@ -2,14 +2,12 @@ const puppeteer = require('puppeteer');
 
 export default async function fid(req, res) {
     // res.status(200).json({ name: 'John Doe' })
-  
+
+    async function execute(url){
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
       res.setHeader('Access-Control-Allow-Credentials', true);
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
-
-
-      const url = 'https://ibrapsi.com.br/graduacao-em-psicanalise/';
 
       // Launch a headless browser
       const browser = await puppeteer.launch({ headless: true });
@@ -86,5 +84,7 @@ export default async function fid(req, res) {
 
       // Close the browser
       await browser.close();
+    }
+  
 }
   
