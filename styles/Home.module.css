@@ -29,7 +29,7 @@
 }
 
 .title a {
-  color:#5ac1ae;
+  color:#7a44c0;
   text-decoration: none;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .code {
-  background: #fafafa;
+  background: #333333;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -88,8 +88,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #5ac1ae;
-  border-color: #5ac1ae;
+  color: #7a44c0;
+  border-color: #7a44c0;
 }
 
 .card h2 {

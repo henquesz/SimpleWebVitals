@@ -13,13 +13,13 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Bem vindo a <a href="https://pokeapivini.herokuapp.com/api/poke">PokeApi!</a>
+          Simple <a href="https://pokeapivini.herokuapp.com/api/poke">Web Vitals</a> API
         </h1>
 
         <p className={styles.description}>
-          Acesse as informações atráves da rota{' '}
-          <code className={styles.code}>/api/poke</code><br></br><br></br>
-          ou minhas informações em{' '}
+          Confira nossa documentação através da rota{' '}
+          <code className={styles.code}>/api/documentation</code><br></br><br></br>
+          ou as informações dos desenvolvedores em{' '}
           <code className={styles.code}>/api/dev</code>
         </p>
         
@@ -49,9 +49,9 @@ export default function Home() {
             rel="noopener noreferrer"
             className={styles.card}
           >
-            <h2>PokeApi Repo &rarr;</h2>
+            <h2>Application &rarr;</h2>
             <p>
-              Acesse o repositório da api para mais informações.
+              Acesse o link de uso da nossa aplicação.
             </p>
           </a>
         </div>
