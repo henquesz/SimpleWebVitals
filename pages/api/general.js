@@ -1,30 +1,32 @@
-import cls from "./cls";
-import lcp from "./lcp";
-import ttfb from "./ttfb";
-import inp from "./inp";
-import fid from "./fid";
+import fid from './fid'
+import cls from './cls';
+import inp from './inp';
+import lcp from './lcp';
+import ttfb from './ttfb';
 
-export default async function general(req, res, url) {
-    let resultCLS = '';
-    let resultLCP = '';
+export default async function general(req, res) {
+
     let resultFID = '';
-    let resultTTFB = '';
+    let resultCLS = '';
     let resultINP = '';
+    let resultLCP = '';
+    let resultTTFB = '';
+
+    let url = 'https://ibrapsi.com.br/graduacao-em-psicanalise/';
 
     try{
-         resultLCP = await lcp(url = 'https://ibrapsi.com.br/graduacao-em-psicanalise/');
-         resultTTFB = await ttfb(url = 'https://ibrapsi.com.br/graduacao-em-psicanalise/');
-         resultCLS = await cls(url = 'https://ibrapsi.com.br/graduacao-em-psicanalise/');
-         resultINP = await inp(url = 'https://ibrapsi.com.br/graduacao-em-psicanalise/');
-         resultFID = await fid.execute(url = 'https://ibrapsi.com.br/graduacao-em-psicanalise/');
-    
+        resultFID = await fid(url = url);
+        resultCLS = await cls(url = url);  
+        resultINP = await inp(url = url);  
+        resultLCP = await lcp(url = url);  
+        resultTTFB = await ttfb(url = url);  
     }catch(e){
         console.log(e);
     }
 
     const results = {
-        resultCLS,
         resultFID,
+        resultCLS,
         resultINP,
         resultLCP,
         resultTTFB

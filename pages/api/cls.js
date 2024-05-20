@@ -1,17 +1,7 @@
 const puppeteer = require('puppeteer');
 
-
-export default async function cls(req, res, url) {
-    // res.status(200).json({ name: 'John Doe' })
+async function cls(url, req, res) {
   
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      res.setHeader('Access-Control-Allow-Credentials', true);
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
-  
-
-      let url = url;
-
 // Launch a headless browser
 const browser = await puppeteer.launch({ headless: true });
 const page = await browser.newPage();
@@ -49,8 +39,10 @@ const cls = await page.evaluate(() => {
 
 console.log('Cumulative Layout Shift (CLS):', cls);
 
-res.status(200).json({'Cumulative Layout Shift (CLS):': cls});
-
 // Close the browser
 await browser.close();
+
+return cls;
 }
+
+module.exports = cls;

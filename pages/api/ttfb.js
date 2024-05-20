@@ -1,18 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 // poke api informations with allow cors
 
-export default async function ttfb(req, res, url) {
-  // res.status(200).json({ name: 'John Doe' })
-
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
+async function ttfb(url, req, res) {
 
     var ttfb;
     var jsonRetorno;
 
-      const url = url;
       const fetchUrl = async () => {
         if (performance && performance.clearResourceTimings) {
           performance.clearResourceTimings();
@@ -35,11 +28,11 @@ export default async function ttfb(req, res, url) {
               ttfb = entries[0].responseStart;
               console.log('Time to first byte:', ttfb, 'milliseconds');
               jsonRetorno = {'result': ttfb};
-              res.status(200).json({ ttfb: jsonRetorno });
+              return jsonRetorno;
             } else {
               console.error('No performance entries found for URL:', url);
               jsonRetorno = {'result': `No performance entries found for URL: ${url}`};
-              res.status(500).json({ error: jsonRetorno });
+              return jsonRetorno;
             }
           }, 0);
         } catch (error) {
@@ -50,3 +43,5 @@ export default async function ttfb(req, res, url) {
       fetchUrl();
 
 }
+
+module.exports = ttfb;

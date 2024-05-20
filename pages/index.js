@@ -3,13 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
-import general from './api/general'
-
 export default function Home() {
-
-  let teste = general();
-
-  console.log(teste);
 
   return (
     <div className={styles.container}>

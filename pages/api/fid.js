@@ -1,14 +1,15 @@
 const puppeteer = require('puppeteer');
+import isValidURL from '../../utils/urlValidator';
 
-export default async function fid(req, res) {
-    // res.status(200).json({ name: 'John Doe' })
+async function fid( url, req, res) {
+  console.log(url);
 
-    async function execute(url){
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      res.setHeader('Access-Control-Allow-Credentials', true);
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
+  if (!isValidURL(url)) {
+    url = 'https://ibrapsi.com.br/graduacao-em-psicanalise/';
+  }
 
+  console.log(url);
+  
       // Launch a headless browser
       const browser = await puppeteer.launch({ headless: true });
       const page = await browser.newPage();
@@ -79,12 +80,13 @@ export default async function fid(req, res) {
     
       console.log('Metrics:', metrics);
       console.log('First Input Delay (FID):', metrics.firstInputDelay ? `${metrics.firstInputDelay} ms` : 'No FID measured');
-      
-      res.status(200).json({ metricas: metrics});
 
       // Close the browser
       await browser.close();
+
+      return metrics;
     }
-  
-}
+
+module.exports = fid;
+
   

@@ -1,16 +1,7 @@
 const puppeteer = require('puppeteer');
 
 
-export default async function lcp(req, res, url) {
-    // res.status(200).json({ name: 'John Doe' })
-  
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      res.setHeader('Access-Control-Allow-Credentials', true);
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
-  
-
-      let url = url;
+async function lcp(url, req, res) {
 
 // Launch a headless browser
 const browser = await puppeteer.launch({ headless: true });
@@ -44,9 +35,12 @@ lcp = (lcp / 1000).toFixed(2);
 
 console.log('Largest Contentful Paint (LCP):', lcp ? `${lcp}s` : 'No LCP measured');
 
-
-res.status(200).json({'Largest Contentful Paint (LCP):': lcp ? `${lcp}s` : 'No LCP measured'});
+// res.status(200).json({'Largest Contentful Paint (LCP):': lcp ? `${lcp}s` : 'No LCP measured'});
 
 // Close the browser
 await browser.close();
+
+return lcp;
 }
+
+module.exports = lcp;

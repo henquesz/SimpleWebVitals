@@ -1,17 +1,6 @@
 const puppeteer = require('puppeteer');
 
-
-export default async function inp(req, res, url) {
-    // res.status(200).json({ name: 'John Doe' })
-  
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      res.setHeader('Access-Control-Allow-Credentials', true);
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
-
-      
-      let url = url;
-
+async function inp(url, req, res) {
       // Launch a headless browser
       const browser = await puppeteer.launch({ headless: true });
       const page = await browser.newPage();
@@ -58,9 +47,11 @@ export default async function inp(req, res, url) {
       });
     
       console.log('Interaction to Next Paint (INP):', inp ? `${inp} ms` : 'No INP measured');
-
-      res.status(200).json({'Interaction to Next Paint (INP):': inp ? `${inp} ms` : 'No INP measured'});
     
       // Close the browser
       await browser.close();
+
+      return inp;
 }
+
+module.exports = inp;
