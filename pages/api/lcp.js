@@ -40,7 +40,18 @@ console.log('Largest Contentful Paint (LCP):', lcp ? `${lcp}s` : 'No LCP measure
 // Close the browser
 await browser.close();
 
-return lcp;
+let statuslcp;
+if(parseInt(lcp) <= 2.5){
+  statuslcp = 'Good';
+}
+else if(parseInt(lcp) > 2.5 && parseInt(lcp) <= 4.0){
+  statuslcp = 'Need Improvement';
+}
+else{
+  statuslcp = 'Poor';
+}
+
+return {'LCP': lcp, 'Status': statuslcp};
 }
 
 module.exports = lcp;

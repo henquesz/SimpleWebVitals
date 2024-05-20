@@ -1,10 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
-export default function Home() {
-
+export default function application() {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,16 +14,19 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Simple <a href="https://pokeapivini.herokuapp.com/api/poke">Web Vitals</a> API
+          Simple{" "}
+          <a href="https://pokeapivini.herokuapp.com/api/poke">Web Vitals</a>{" "}
+          API
         </h1>
 
         <p className={styles.description}>
-          Confira nossa documentação através da rota{' '}
-          <code className={styles.code}>/api/documentation</code><br></br><br></br>
-          ou as informações dos desenvolvedores em{' '}
+          Confira nossa documentação através da rota{" "}
+          <code className={styles.code}>/api/documentation</code>
+          <br></br>
+          <br></br>
+          ou as informações dos desenvolvedores em{" "}
           <code className={styles.code}>/api/dev</code>
         </p>
-        
 
         <div className={styles.grid}>
           <a href="https://github.com/henquesz" className={styles.card}>
@@ -32,7 +34,10 @@ export default function Home() {
             <p>Acesse o GitHub do dev responsável.</p>
           </a>
 
-          <a href="https://www.linkedin.com/in/vinicius-henques-5a843a1b9/" className={styles.card}>
+          <a
+            href="https://www.linkedin.com/in/vinicius-henques-5a843a1b9/"
+            className={styles.card}
+          >
             <h2>LinkedIn &rarr;</h2>
             <p>Veja o perfil profissional do nosso dev.</p>
           </a>
@@ -44,14 +49,11 @@ export default function Home() {
             <h2>Portfólio &rarr;</h2>
             <p>Descubra projetos e todas as skills do nosso dev.</p>
           </a>
-          
+
           <Link href="./application.js" className={styles.card}>
             <h2>Application &rarr;</h2>
-            <p>
-              Acesse o link de uso da nossa aplicação.
-            </p>
+            <p>Acesse o link de uso da nossa aplicação.</p>
           </Link>
-
         </div>
       </main>
 
@@ -61,12 +63,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }

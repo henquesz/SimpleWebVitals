@@ -51,7 +51,21 @@ async function inp(url, req, res) {
       // Close the browser
       await browser.close();
 
-      return inp;
+      let statusInp;
+      if(!inp){
+        statusInp = 'Interaction to Next Paint (INP): No INP measured';
+      }
+      else if(parseInt(inp) <= 200){
+        statusInp = 'Good';
+      }
+      else if( parseInt(inp) > 200 && parseInt(inp) <= 500){
+        statusInp = 'Need Improvement';
+      }
+      else if(parseInt(inp) > 500){
+        statusInp = 'Poor';
+      }
+
+      return {'INP': inp, 'Status': statusInp};
 }
 
 module.exports = inp;
