@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@nextui-org/input": "^2.1.21",
+    "@nextui-org/react": "^2.3.6",
     "@nextui-org/system": "^2.1.2",
     "@nextui-org/theme": "^2.2.3",
+    "@swc/helpers": "^0.5.11",
     "axios": "^1.6.8",
     "framer-motion": "^11.2.4",
     "next": "13.0.4",

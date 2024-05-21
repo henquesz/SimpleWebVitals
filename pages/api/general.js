@@ -20,17 +20,16 @@ export default async function general(req, res) {
         resultINP = await inp(url = url);  
         resultLCP = await lcp(url = url);  
         resultTTFB = await ttfb(url = url);  
+
+        const results = {
+            resultFID,
+            resultCLS,
+            resultINP,
+            resultLCP,
+            resultTTFB
+        };
+        res.status(200).json({'metricResults': results});
     }catch(e){
         console.log(e);
     }
-
-    const results = {
-        resultFID,
-        resultCLS,
-        resultINP,
-        resultLCP,
-        resultTTFB
-    };
-
-    res.status(200).json({'metricResults': results});
 }

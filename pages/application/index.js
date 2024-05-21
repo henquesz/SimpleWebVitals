@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "./Home.module.css";
-import Link from "next/link";
 
 export default function application() {
   return (
@@ -55,7 +54,6 @@ export default function application() {
             <p>Acesse o link de uso da nossa aplicação.</p>
           </Link> */}
 
-          
         </div>
       </main>
 
