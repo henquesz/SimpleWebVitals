@@ -18,12 +18,12 @@ export default function Home() {
           Simple <a href="https://pokeapivini.herokuapp.com/api/poke">Web Vitals</a> API
         </h1>
 
-        {/* <p className={styles.description}>
+        <p className={styles.description}>
           Confira nossa documentação através da rota{' '}
           <code className={styles.code}>/api/documentation</code><br></br><br></br>
           ou as informações dos desenvolvedores em{' '}
           <code className={styles.code}>/api/dev</code>
-        </p> */}
+        </p>
         
 
         <div className={styles.grid}>
