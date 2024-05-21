@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "./Home.module.css";
 import Link from "next/link";
 
 export default function application() {
@@ -19,17 +19,17 @@ export default function application() {
           API
         </h1>
 
-        <p className={styles.description}>
+        {/* <p className={styles.description}>
           Confira nossa documentação através da rota{" "}
           <code className={styles.code}>/api/documentation</code>
           <br></br>
           <br></br>
           ou as informações dos desenvolvedores em{" "}
           <code className={styles.code}>/api/dev</code>
-        </p>
+        </p> */}
 
         <div className={styles.grid}>
-          <a href="https://github.com/henquesz" className={styles.card}>
+          {/* <a href="https://github.com/henquesz" className={styles.card}>
             <h2>GitHub &rarr;</h2>
             <p>Acesse o GitHub do dev responsável.</p>
           </a>
@@ -53,7 +53,9 @@ export default function application() {
           <Link href="./application.js" className={styles.card}>
             <h2>Application &rarr;</h2>
             <p>Acesse o link de uso da nossa aplicação.</p>
-          </Link>
+          </Link> */}
+
+          
         </div>
       </main>
 

@@ -18,12 +18,12 @@ export default function Home() {
           Simple <a href="https://pokeapivini.herokuapp.com/api/poke">Web Vitals</a> API
         </h1>
 
-        <p className={styles.description}>
+        {/* <p className={styles.description}>
           Confira nossa documentação através da rota{' '}
           <code className={styles.code}>/api/documentation</code><br></br><br></br>
           ou as informações dos desenvolvedores em{' '}
           <code className={styles.code}>/api/dev</code>
-        </p>
+        </p> */}
         
 
         <div className={styles.grid}>
@@ -45,7 +45,7 @@ export default function Home() {
             <p>Descubra projetos e todas as skills do nosso dev.</p>
           </a>
           
-          <Link href="./application.js" className={styles.card}>
+          <Link href="./application" className={styles.card}>
             <h2>Application &rarr;</h2>
             <p>
               Acesse o link de uso da nossa aplicação.
